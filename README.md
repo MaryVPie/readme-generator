@@ -26,14 +26,10 @@ SO THAT I can quickly create a professional README for a new project
 ## What's included
 
 - index.html:
-  - optimized for the accessibility needs
-  - made as per initial mockups
-- styles.css
-  - Bootstrap Framework
+  - containing the information collected from the prompts constructed and written to the file system
+- `fs` for writing to the file system
+- `inquirer` for collecting user input
 
-- [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) to retrieve weather data
-- `localStorage` to store persistent data
-- `moment.js`
 
 ## How can I contribute or help?
 - Star my GitHub repo :star:
