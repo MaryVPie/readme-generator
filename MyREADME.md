@@ -17,15 +17,15 @@ SO THAT I can quickly create a professional README for a new project
 
 ## Screenshots 
 
-|<img src=".\Assets/Capture.PNG" width="400" height="250" alt="Homepage"/>| <img src=".\Assets/06-server-side-apis-homework-demo.png" width="400" height="250" alt="The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta."/> |
-| --- | --- |
-|  Work done | Mockup |
+|<img src=".\Assets/Capture.PNG" width="400" height="250" alt="Homepage"/>| <img src=".\Assets/06-server-side-apis-homework-demo.png" width="400" height="250" alt="The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta."/> | <img src=".\Assets/06-server-side-apis-homework-demo.png" width="400" height="250" alt="The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta."/> |
+| --- | --- | --- |
+|  Index.js | Terminal | Generated README.md |
 
 ---
 
 ## What's included
 
-- index.html:
+- index.js:
   - containing the information collected from the prompts constructed and written to the file system
 - `fs` for writing to the file system
 - `inquirer` for collecting user input
@@ -47,9 +47,6 @@ SO THAT I can quickly create a professional README for a new project
 ## Links to Review
 
 * The walkthrough video demonstrating the functionality of the application:
-
-
-* A sample README.md file for a project repository generated using the application:
 
 
 * The URL of the GitHub repository: https://github.com/MaryVPie/wheather-dashboard

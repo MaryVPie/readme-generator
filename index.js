@@ -1,8 +1,9 @@
+// Imports the filesystem module, inquirer package and declares an array of licenses
 const fs = require("fs");
 const inquirer = require("inquirer");
-const { callbackify } = require("util");
-let licences = ["Apache 2.0 License", "Boost Software License 1.0", "BSD 3-Clause License", "BSD 2-Clause License", "GNU GPL v3", "GNU GPL v2", "GNU AGPL v3", "Public Domain Dedication and License (PDDL)", "The MIT License", "Mozilla Public License 2.0"];
+let licenses = ["Apache 2.0 License", "Boost Software License 1.0", "BSD 3-Clause License", "BSD 2-Clause License", "GNU GPL v3", "GNU GPL v2", "GNU AGPL v3", "Public Domain Dedication and License (PDDL)", "The MIT License", "Mozilla Public License 2.0"];
 
+// Questions to user
 inquirer
 .prompt([
     {
@@ -29,7 +30,7 @@ inquirer
         type: "list",
         message: "What license do you need for your project?",
         name: "License",
-        choices: licences
+        choices: licenses
     },
     {
         type: "input",
@@ -54,6 +55,7 @@ inquirer
 
     
 ])
+// User's feedback and generates readme file
 .then(answers=>{
     console.log(answers);
     fs.writeFile('README.md', `
