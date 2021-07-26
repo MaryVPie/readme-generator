@@ -49,7 +49,7 @@ SO THAT I can quickly create a professional README for a new project
 * The walkthrough video demonstrating the functionality of the application:
 
 
-* The URL of the GitHub repository: https://github.com/MaryVPie/wheather-dashboard
+* The URL of the GitHub repository: https://github.com/MaryVPie/readme-generator
 
 
 ## From developer
