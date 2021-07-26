@@ -1,6 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const { callbackify } = require("util");
+let licences = ["Apache 2.0 License", "Boost Software License 1.0", "BSD 3-Clause License", "BSD 2-Clause License", "GNU GPL v3", "GNU GPL v2", "GNU AGPL v3", "Public Domain Dedication and License (PDDL)", "The MIT License", "Mozilla Public License 2.0"];
 
 inquirer
 .prompt([
@@ -16,11 +17,6 @@ inquirer
     },
     {
         type: "input",
-        message: "What is your project content?",
-        name: "Content"
-    },
-    {
-        type: "input",
         message: "How do you install the program?",
         name: "Installation"
     },
@@ -30,9 +26,10 @@ inquirer
         name: "Usage"
     },
     {
-        type: "input",
+        type: "list",
         message: "What license do you need for your project?",
-        name: "License"
+        name: "License",
+        choices: licences
     },
     {
         type: "input",
@@ -44,11 +41,6 @@ inquirer
         message: "What are the tests for this program?",
         name: "Tests"
     },
-    // {
-    //     type: "input",
-    //     message: "Do you have any questions?",
-    //     name: "Questions"
-    // },
     {
         type: "input",
         message: "What is your GitHub username?",
@@ -64,32 +56,69 @@ inquirer
 ])
 .then(answers=>{
     console.log(answers);
-    fs.writeFile('README_gen.md', `
-#Overview 
----
+    fs.writeFile('README.md', `
 
-<h1 style="color: blue; font-weight: bold;">Project Title: ${answers.TItle}</h1>
-<h2 style="font-size: medium;">What is your project about?</h2>
-<p style="background: cadetblue;">Description:${answers.Description}</p>
-<h2 style="font-size: medium;">What is your project content?${answers.Content}</h2>
-<h2 style="font-size: medium;">How do you install the program?${answers.Installation}</h2>
-<h2 style="font-size: medium;">How do you use this application?${answers.Usage}</h2>
-<h2 style="font-size: medium;">What license do you need for your project?${answers.License}</h2>
-<h2 style="font-size: medium;">What are the guidelines for contributing?${answers.Contributing}</h2>
-<h2 style="font-size: medium;">What are the tests for this program?${answers.Tests}</h2>
-<h3 style="font-style:italic;">Do you have any questions?</h3>
-<ul>
-    <li>
-           <a target="_blank" href="${answers.username}">GitHub</a> 
-    </li>
-    <li>
-            <a target="_blank" href="mailto:${answers.email}">email</a>
-    </li>
-</ul>`, (err) =>
+## Project: ${answers.TItle}
+${GetBadgeByLicenseName(answers.License)}
+
+### Description
+${answers.Description}
+
+    
+### Table of Contents    
+[TOC]
+    
+### Installation
+${answers.Installation}
+
+### Usage
+${answers.Usage}
+
+### License
+This project is covered under **${answers.License}**
+
+### Contributing
+${answers.Contributing}
+
+### Tests
+${answers.Tests}
+
+### Questions
+
+:smiley_cat: [GitHub URL](https://github.com/${answers.username}) 
+
+If you have additional question you can reach me by email :e-mail:  [Email: ${answers.email}](mailto:${answers.email})
+    
+---`, (err) =>
   
     err ? console.error(err) : console.log('Commit logged!'));
 });
 
+function GetBadgeByLicenseName(name) {
+    
+    switch (name) {
+        case "Apache 2.0 License":
+            return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+        case "Boost Software License 1.0":
+            return "[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
+        case "BSD 3-Clause License":
+            return "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
+        case "BSD 2-Clause License":
+            return "[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)";
+        case "GNU GPL v3":
+            return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+        case "GNU GPL v2":
+            return "[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)";
+        case "GNU AGPL v3":
+            return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
+        case "Public Domain Dedication and License (PDDL)":
+            return "[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)";
+        case "The MIT License":
+            return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+        case "Mozilla Public License 2.0":
+            return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
 
+      }
+}
 
 
