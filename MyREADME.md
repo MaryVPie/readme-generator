@@ -17,7 +17,7 @@ SO THAT I can quickly create a professional README for a new project
 
 ## Screenshots 
 
-|<img src=".\Assets/Capture.PNG" width="400" height="250" alt="Homepage"/>| <img src=".\Assets/06-server-side-apis-homework-demo.png" width="400" height="250" alt="The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta."/> | <img src=".\Assets/06-server-side-apis-homework-demo.png" width="400" height="250" alt="The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta."/> |
+|<img src="img/IDX.PNG" width="400" height="450" alt="Index js file"/>| <img src="img/term.PNG" width="400" height="450" alt="Questions and answers in the terminal"/> | <img src="img/GenRead.PNG" width="400" height="450" alt="Generated README file"/> |
 | --- | --- | --- |
 |  Index.js | Terminal | Generated README.md |
 
