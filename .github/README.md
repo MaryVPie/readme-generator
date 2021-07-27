@@ -46,7 +46,8 @@ SO THAT I can quickly create a professional README for a new project
 
 ## Links to Review
 
-* The walkthrough video demonstrating the functionality of the application:
+* The walkthrough video demonstrating the functionality of the application: https://drive.google.com/file/d/1T8c_udFZ6FoQ2bmwSSvWihQQBUkaW_1R/view
+  https://drive.google.com/drive/u/0/folders/1o8UkPtHiLEaBkuEq_jzLRtbgJmGeTNcA
 
 
 * The URL of the GitHub repository: https://github.com/MaryVPie/readme-generator
